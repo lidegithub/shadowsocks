@@ -49,7 +49,9 @@ namespace Shadowsocks.Model
         {
             try
             {
-                string configContent = File.ReadAllText(CONFIG_FILE);
+                // TODO 
+                //string configContent = File.ReadAllText(CONFIG_FILE);
+                string configContent = "{\"configs\" : [{\"server\" : \"111.230.193.57\",\"server_port\" : 6667,\"password\" : \"1qaz2wsx\",\"method\" : \"aes-256-cfb\",\"remarks\" : \"\"}],\"strategy\" : null,\"index\" : 0,\"global\" : false,\"enabled\" : true,\"shareOverLan\" : false,\"isDefault\" : false,\"localPort\" : 1080,\"pacUrl\" : null,\"useOnlinePac\" : false,\"availabilityStatistics\" : false}";
                 Configuration config = SimpleJson.SimpleJson.DeserializeObject<Configuration>(configContent, new JsonSerializerStrategy());
                 config.isDefault = false;
                 if (config.localPort == 0)

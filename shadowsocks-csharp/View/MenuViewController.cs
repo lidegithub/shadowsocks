@@ -43,6 +43,7 @@ namespace Shadowsocks.View
         private MenuItem editGFWUserRuleItem;
         private MenuItem editOnlinePACItem;
         private ConfigForm configForm;
+        
         private string _urlToOpen;
 
         public MenuViewController(ShadowsocksController controller)
@@ -74,11 +75,12 @@ namespace Shadowsocks.View
 
             updateChecker.CheckUpdate(controller.GetConfigurationCopy());
 
-            if (controller.GetConfigurationCopy().isDefault)
-            {
-                _isFirstRun = true;
-                ShowConfigForm();
-            }
+            //if (controller.GetConfigurationCopy().isDefault)
+            //{
+            //    _isFirstRun = true;
+            //    ShowConfigForm();
+            //}
+            //ShowLoginForm();
         }
 
         void controller_Errored(object sender, System.IO.ErrorEventArgs e)
@@ -304,6 +306,8 @@ namespace Shadowsocks.View
 
             }
         }
+
+        
 
         private void ShowConfigForm()
         {

@@ -40,14 +40,38 @@ namespace Shadowsocks
 #if !DEBUG
                 Logging.OpenLogFile();
 #endif
-                ShadowsocksController controller = new ShadowsocksController();
+                //ShadowsocksController controller = new ShadowsocksController();
 
-                MenuViewController viewController = new MenuViewController(controller);
+                //MenuViewController viewController = new MenuViewController(controller);
 
-                controller.Start();
+                //controller.Start();
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
 
                 Application.Run();
             }
         }
+
+        //private void ShowLoginForm()
+        //{
+        //    if (loginForm != null)
+        //    {
+        //        loginForm.Activate();
+        //    }
+        //    else
+        //    {
+        //        loginForm = new LoginForm();
+        //        loginForm.Show();
+        //        loginForm.FormClosed += loginForm_FormClosed;
+        //    }
+        //}
+
+        //void loginForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    loginForm = null;
+        //    Util.Utils.ReleaseMemory(true);
+        //    ShowFirstTimeBalloon();
+        //}
     }
 }
