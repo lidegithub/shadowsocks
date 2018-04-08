@@ -7,10 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Shadowsocks.Controller;
+using System.Net.Http;
+using System.Net;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace Shadowsocks.View
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : BaseForm
     {
         private int _loginErrorTimes = 1;
         private const int MAXLOGININPUTTIMES = 5;
@@ -40,7 +44,7 @@ namespace Shadowsocks.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Boolean input_error = judgeInputError();
+            Boolean input_error = judgeInputErrorAsync();
             if (input_error)
             {
                 if (_loginErrorTimes < MAXLOGININPUTTIMES)
@@ -73,7 +77,7 @@ namespace Shadowsocks.View
 
         }
 
-        private Boolean judgeInputError()
+        private Boolean judgeInputErrorAsync()
         {
             String name = textBox1.Text;
             String password = textBox2.Text;
@@ -82,6 +86,15 @@ namespace Shadowsocks.View
             {
                 return true;
             }
+
+            string uri = "http://www.baidu.com/";
+            HttpClient client = new HttpClient();
+            HttpResponseMessage res = client.GetAsync(new Uri(uri)).Result;
+            String result = res.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(result);
+            MessageBox.Show(result);
+
+            //System.Threading.Tasks.Task<string> body = await client.GetStringAsync(uri);
 
             if (name.Equals("lide") && password.Equals("lide123"))
             {
