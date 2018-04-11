@@ -216,11 +216,11 @@
     <Compile Include="View\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Login2Form.cs">
+    <Compile Include="View\FunctionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Login2Form.Designer.cs">
-      <DependentUpon>Login2Form.cs</DependentUpon>
+    <Compile Include="View\FunctionForm.Designer.cs">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -253,8 +253,8 @@
     <EmbeddedResource Include="View\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Login2Form.resx">
-      <DependentUpon>Login2Form.cs</DependentUpon>
+    <EmbeddedResource Include="View\FunctionForm.resx">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -306,6 +306,9 @@
     <Content Include="Resources\checkbox_tick_normal.png" />
     <Content Include="Resources\checkbox_tick_pushed.png" />
     <None Include="Resources\homebackground.jpg" />
+    <None Include="Resources\fun1.jpg" />
+    <None Include="Resources\fun2.jpg" />
+    <None Include="Resources\fun3.jpg" />
     <Content Include="Resources\texture.png" />
     <Content Include="Resources\texture2.png" />
     <Content Include="Resources\zhuce.png" />

@@ -47,31 +47,17 @@ namespace Shadowsocks
                 //controller.Start();
 
                 LoginForm loginForm = new LoginForm();
-                loginForm.Show();
+                if (loginForm.autologin)
+                {
+                    FunctionForm funcForm = new FunctionForm();
+                    funcForm.Show();
+                } else
+                    loginForm.Show();
 
                 Application.Run();
             }
         }
 
-        //private void ShowLoginForm()
-        //{
-        //    if (loginForm != null)
-        //    {
-        //        loginForm.Activate();
-        //    }
-        //    else
-        //    {
-        //        loginForm = new LoginForm();
-        //        loginForm.Show();
-        //        loginForm.FormClosed += loginForm_FormClosed;
-        //    }
-        //}
-
-        //void loginForm_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    loginForm = null;
-        //    Util.Utils.ReleaseMemory(true);
-        //    ShowFirstTimeBalloon();
-        //}
+       
     }
 }

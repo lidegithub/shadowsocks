@@ -1,6 +1,6 @@
 # translation for Simplified Chinese
 
-Shadowsocks=Shadowsocks
+Shadowsocks=YBC跨境电商加速器-企业版
 
 # Menu items
 
